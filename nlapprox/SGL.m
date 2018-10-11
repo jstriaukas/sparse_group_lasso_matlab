@@ -19,7 +19,7 @@ if (standardize == true)
     X_transform.Xmeans = means;
 end
 
-if (strcmp("linear",type))
+if (strcmp('linear',type))
     if (standardize == true)
         intercept = mean(y);
         y = y - intercept;

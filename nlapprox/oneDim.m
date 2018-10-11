@@ -56,7 +56,7 @@ for k = 1:nlam
       eta = junk.eta;
       beta_old = beta.new;
       if(verbose)
-        disp(["*** Lambda - ", num2str(k), " ***"]);
+        disp(['*** Lambda - ', num2str(k), ' ***']);
       end
 end
     

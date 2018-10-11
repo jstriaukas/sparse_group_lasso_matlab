@@ -16,7 +16,7 @@ step = 1;
 reset = 10;
 alpha = 0.95;
 lambdas = [1, 2, 3];
-type = "linear";
+type = 'linear';
 
 %%
 
