@@ -1,0 +1,22 @@
+require("SGL")
+set.seed(123)
+n = 50; p = 100; size.groups = 3
+index <- ceiling(1:p / size.groups)
+X = matrix(rnorm(n * p), ncol = p, nrow = n)
+beta = (-2:2)
+y = X[,1:5] %*% beta + 0.1*rnorm(n)
+data = list(x = X, y = y)
+maxit = 1000 
+thresh = 0.001 
+min.frac = 0.1
+nlam = 20
+gamma = 0.8
+standardize = TRUE
+verbose = FALSE
+step = 1
+reset = 10
+alpha = 0.95
+lambdas = NULL
+type = "linear"
+
+Fit = SGL(data, index, type = "linear")
