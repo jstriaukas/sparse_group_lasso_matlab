@@ -1,57 +1,17 @@
-#include "mex.h"
-#include "math.h"
-#include "iostream"
+function out = linSolver(X,y,index,nrow,ncol,numGroup,beta,rangeGroupInd, ...
+    groupLen,lambda1,lambda2,innerIter,thresh,ldot,nullBeta,gamma,eta,betaIsZero, ...
+    groupChange,isActive,useGroup,step,reset)
 
-
-using namespace std;
-
-void linGradCalc(int *nrow, double *eta, double *y, double *ldot)
-  {
-    for(int i = 0; i < nrow[0]; i++)
-    {
-      ldot[i] = (eta[i] - y[i])/nrow[0];  /* OR MAYBE NOT? */
-    }
-  }
-double linNegLogLikelihoodCalc(int *nrow, double *eta, double *y)
-  {
-    double squareSum = 0;
-    
-    for(int i = 0; i < nrow[0]; i++)
-    {
-      squareSum = squareSum + pow(eta[i] - y[i], 2)/2; 
-    }
-    
-    return squareSum/nrow[0];   /* OR MAYBE NOT? */
-  }
-  
-void linSolver(double *X, double *y, int* index, int *nrow, int *ncol, int *numGroup, double *beta, int *rangeGroupInd, int *groupLen, double *lambda1, double *lambda2, int *innerIter, double *thresh, double *ldot, double *nullBeta, double *gamma, double *eta, int* betaIsZero, int& groupChange, int* isActive, int* useGroup, double *step, int *reset)
-  {
-    double *theta = new double[ncol[0]];
-    int startInd = 0;
-    double zeroCheck = 0;
-    double check = 0;
-    int count = 0;
-    double t = step[0];
-    double diff = 1;
-    double norm = 0;
-    double uOp = 0;
-    double Lnew = 0;
-    double Lold = 0;
-    double sqNormG = 0;
-    double iProd = 0;
-    double *etaNew = NULL;
-    etaNew = new double[nrow[0]];
-    double *etaNull = NULL;
-    etaNull = new double[nrow[0]];
-    //  int reset = 20;
-    
-    for(int i = 0; i < numGroup[0]; i++)
-    {
-      if(useGroup[i] == 1)
-      {
-        startInd = rangeGroupInd[i];
-        
-        // Setting up null gradient calc to check if group is 0
+    for i = 1:numGroup
+        if(useGroup(i) == 1)
+            startInd = rangeGroupInd(i);
+            % Setting up null gradient calc to check if group is 0
+            for k = 1:nrow
+                etaNull(k) = eta(k);
+                for j = startInd:(rangeGroupInd(i) + groupLen(i))
+                    etaNull(k) = etaNull(k) - X(k + nrow*j)*beta(j); 
+                end
+            end   
         for(int k = 0; k < nrow[0]; k++)
         {
           etaNull[k] = eta[k];
@@ -60,6 +20,12 @@ void linSolver(double *X, double *y, int* index, int *nrow, int *ncol, int *numG
             etaNull[k] = etaNull[k] - X[k + nrow[0] * j] * beta[j]; 
           }
         }
+        end % end if useGroup(i) == 1
+    end % end numGroup loop    
+    for(int i = 0; i < numGroup[0]; i++)
+
+     
+  
         
         // Calculating Null Gradient
         linGradCalc(nrow, etaNull, y, ldot);
@@ -342,61 +308,3 @@ void linNest(double *X, double* y, int *index, int *nrow, int *ncol, int *numGro
     
     /*return 1*/;
   }
-
-void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])
-{
-    
-    double       *X,        *y,  *lambda1, *lambda2,  *beta,          *thresh, *outerThresh;
-    double     *eta,    *gamma,     *step;
-    int       index,      nrow,       ncol, numGroup, rangeGroupInd,  groupLen;
-    int   innerIter, outerIter, betaIsZero, reset;
-    int     rbeta;
-    
-	/* Create a pointer to the input vectors and scalar inputs */
-     X = mxGetPr(prhs[0]);
-     y = mxGetPr(prhs[1]);
-     index = mxGetScalar(prhs[2]);
-     nrow = mxGetScalar(prhs[3]);
-     ncol = mxGetScalar(prhs[4]);
-     
-     numGroup = mxGetScalar(prhs[5]);
-     rangeGroupInd = mxGetScalar(prhs[6]);
-     groupLen = mxGetScalar(prhs[7]);
-     
-     lambda1 = mxGetPr(prhs[8]); 
-     lambda2 = mxGetPr(prhs[9]);
-     
-     beta = mxGetPr(prhs[10]);
-     
-     innerIter = mxGetScalar(prhs[11]);
-     outerIter = mxGetScalar(prhs[12]);
-     thresh =  mxGetPr(prhs[13]); 
-     outerThresh =  mxGetPr(prhs[14]);
-     
-     eta =  mxGetPr(prhs[15]); 
-     gamma =  mxGetPr(prhs[16]);
-     
-     betaIsZero = mxGetScalar(prhs[17]);
-     step = mxGetPr(prhs[18]);
-     reset = mxGetScalar(prhs[19]);
-
-
-	/* Get the dimension of beta */
-	rbeta = mxGetM(prhs[10]);
-   
-    
-
-	/* Set the output pointer */
-	plhs[0] = mxCreateDoubleMatrix(rbeta, 1, mxREAL);
-    plhs[1] = mxCreateDoubleMatrix(1, 1, mxREAL); 
-
-	/* Create a C pointer to a copy of the output vectors */
-	beta = mxGetPr(plhs[0]);
-    betaIsZero = mxGetScalar(plhs[1]);
-	/* Call the C subroutine */
-	linNest(X, y, &index, &nrow, &ncol, &numGroup, &rangeGroupInd, &groupLen, lambda1, lambda2, beta, &innerIter, &outerIter, thresh, outerThresh, eta, gamma, &betaIsZero, step, &reset);
-}       
-
-
-
-
