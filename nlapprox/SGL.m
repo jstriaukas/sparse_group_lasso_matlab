@@ -1,10 +1,10 @@
 function out = SGL(y, x, index,varargin)
 
 
-[type,maxit,thresh,minFrac,nlam,gamma,standardize,verbose,step,reset,alpha,lambdas] = ...
+[type,maxit,thresh,minFrac,nlam,gamma,standardize,verbose,step,reset,alpha,lambdas,cpp] = ...
     process_options(varargin,'type','linear','maxit',1000,'thresh',1e-3,...
     'minFrac',1e-1,'nlam',20,'gamma',0.8,'standardize',true, ...
-    'verbose',false,'step',1,'reset',10,'alpha',0.95,'lambdas',[1,2,3]);
+    'verbose',false,'step',1,'reset',20,'alpha',0.95,'lambdas',[1,2,3],'cpp',false);
 
 X_transform = [];
 if (standardize == true)
@@ -27,10 +27,21 @@ if (strcmp('linear',type))
     inner_iter = maxit;
     outer_iter = maxit;
     outer_thresh = thresh;
-    Sol = oneDim(y,x,index,thresh,inner_iter, ...
+    [beta,lambdas] = oneDim(y,x,index,thresh,inner_iter, ...
         outer_iter, outer_thresh, minFrac, ...
         nlam,lambdas,gamma,verbose, ...
-        step,reset,alpha);
+        step,reset,alpha,cpp);
+    
+    if (standardize == true)
+      Sol.beta = beta;
+      Sol.lambdas = lambdas; 
+      Sol.type = type;
+      Sol.intercept = intercept;
+      Sol.X_transform = X_transform; 
+    else
+      Sol.beta = beta;
+      Sol.lambdas = lambdas; 
+    end
 end
 
 out = Sol;

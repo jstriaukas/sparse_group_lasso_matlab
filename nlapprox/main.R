@@ -1,12 +1,13 @@
 rm(list = ls())
 require("SGL")
 require("R.matlab")
-setwd("/Users/striaukas/Documents/GitHub/midas_lasso_shapre_rest/nlapprox")
+#setwd("/Users/striaukas/Documents/GitHub/midas_lasso_shapre_rest/nlapprox")
+setwd("C:/Users/Z440/Documents/GitHub/midas_lasso_shapre_rest/nlapprox")
 set.seed(123)
-n = 50; p = 100; size.groups = 3
+n = 50; p = 10; size.groups = 3
 index <- ceiling(1:p / size.groups)
 X = matrix(rnorm(n * p), ncol = p, nrow = n)
-beta = (-2:2)
+beta = (-2:2)*10
 y = X[,1:5] %*% beta + 0.1*rnorm(n)
 
 #_________ SAVING DATA TO MATLAB FORMAT _____________#
@@ -30,7 +31,7 @@ verbose = FALSE
 step = 1
 reset = 10
 alpha = 0.95
-lambdas = c(1, 2, 3)
+lambdas = c(0, 1, 2, 3)
 type = "linear"
 
-Fit = SGL(data, index, type = "linear")
+Fit = SGL(data, index, type = "linear", lambdas = lambdas, standardize = FALSE)
