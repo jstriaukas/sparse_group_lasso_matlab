@@ -278,7 +278,7 @@ void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])
     double  *eta,*gamma,*step,*ldot,*nullBeta;
     int index,nrow,ncol,numGroup,rangeGroupInd,groupLen;
     int innerIter,groupChange,betaIsZero,reset,isActive,useGroup;
-    int rbeta;
+    double rbeta;
     
 
     /*int& groupChange, int* isActive, 
@@ -318,7 +318,7 @@ void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])
 
 
 	/* Get the dimension of beta */
-	rbeta = mxGetM(prhs[10]);
+	rbeta = mxGetM(prhs[6]);
    
     
 

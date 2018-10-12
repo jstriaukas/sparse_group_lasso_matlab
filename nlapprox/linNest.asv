@@ -21,7 +21,9 @@ while (groupChange == 1)
         tempIsActive = isActive;
         [beta,betaIsZero]=linSolver(X, y, index, nrow, ncol, numGroup, beta, rangeGroupInd, groupLen, lambda1, lambda2, innerIter, thresh, ldot, nullBeta, gamma, eta, betaIsZero, groupChange, isActive, tempIsActive, step, reset);
         outermostCheck = 0;
-        outermostCheck = outermostCheck + sum(abs(outerOldBeta - beta));
+       
+            outermostCheck = outermostCheck + sum(abs(outerOldBeta - beta));
+        end
     end
     
     
