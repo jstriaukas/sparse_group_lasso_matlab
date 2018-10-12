@@ -6,6 +6,8 @@ function out = linNest(X,y,index,nrow,ncol,numGroup,...
 isActive = zeros(numGroup,1);
 useGroup = ones(numGroup,1);
 groupChange = 1;
+ldot = 0;
+nullBeta = 0;
 while (groupChange == 1)
     groupChange = 0;
     linSolver(X, y, index, nrow, ncol, numGroup, beta, rangeGroupInd, groupLen, lambda1, lambda2, innerIter, thresh, ldot, nullBeta, gamma, eta, betaIsZero, groupChange, isActive, useGroup, step, reset);
