@@ -1,0 +1,621 @@
+<html>
+<head>
+<div class="baselog">
+<link rel="stylesheet" href="resources\\matlab-report-styles.css" type="text/css" />
+<style type="text/css" media="screen">
+div.treeview { white-space: nowrap; }
+.treeview img { border: 0px; vertical-align: middle; }
+.trigger { cursor: pointer; }
+.branch { display: none; margin-left: 22px; }
+span.lnnolink { cursor: pointer; color: blue; text-decoration: underline; padding: 1 }
+span.lnnonorm { color: grey; padding: 1 }
+span.textnorm { color: black; padding: 1 }
+span.textcmnt { color: green; padding: 1 }
+span.msglink { cursor: pointer; color: blue; text-decoration: underline }
+span.treelink { cursor: pointer; color: blue; text-decoration: underline }
+.error { color: red; }
+.fcflink { cursor: pointer; color: blue; text-decoration: underline }
+div.tooltip { visibility: hidden; position: fixed;
+  background-color: lightyellow; border: 1px solid black; }
+.td-linebottomrt-gray {border-bottom:1px solid #BBB; border-right:1px solid #BBB;background-color:#F0F0F0;}
+.td-linebottomrt-link {border-bottom:1px solid #BBB; border-right:1px solid #BBB;color:Blue;}
+</style>
+</div>
+<title>Code Generation Report For 'c_linNest'</title>
+</head>
+<body>
+<div class="report-head">MATLAB Coder Build Log</div><p/>
+<div class="baselog">
+<div class="grayline"></div>
+<table cellpadding="4" cellspacing="1"><tr>
+<td align="left" class="td-linebottomrt-gray" colspan="2">Build Parameters</td>
+</tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Build directory</td>
+<td align="left" valign="top" class="td-linebottomrt-link"><a href="matlab: cd('C:\Users\Z440\Documents\GitHub\midas_lasso_shapre_rest\nlapprox\codegen\mex\c_linNest')">C:\Users\Z440\Documents\GitHub\midas_lasso_shapre_rest\nlapprox\codegen\mex\c_linNest</a></td></tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Make wrapper</td>
+<td align="left" valign="top" class="td-linebottomrt-link">c_linNest_mex.bat</td></tr>
+</table>
+<br/>
+<table border="1" cellpadding="4" cellspacing="1" width="100%">
+<tr><td align="left" class="td-linebottomrt-gray">Build Log</td></tr>
+<tr><td valign="top" class="td-script">
+<pre>
+<span class="td-line-number">    1   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DTARGET_API_VERSION=700   -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE    -O -DNDEBUG     -I "C:\PROGRA~1\MATLAB\R2017a/simulink/include" -I "C:\PROGRA~1\MATLAB\R2017a/toolbox/shared/simtargets" -I "C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox\codegen\mex\c_linNest" -I "C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox" -I "C:\Data\mex_function" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2017a\extern\include" -I "." "C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c"</span>
+<span class="td-line-number">    2   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'VCalc':</span>
+<span class="td-line-number">    3   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:26:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">    4   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">    5   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">    6   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:26:5: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code</span>
+<span class="td-line-number">    7   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:31:13: error: redefinition of 'i'</span>
+<span class="td-line-number">    8   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">    9   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   10   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:26:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">   11   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">   12   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   13   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:31:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   14   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">   15   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   16   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:34:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   17   </span><span class="td-line-normal">         for(int j = (riskSetInd[i]-1); j < (riskSetInd[i+1]-1); j++)</span>
+<span class="td-line-number">   18   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">   19   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:43:13: error: redefinition of 'i'</span>
+<span class="td-line-number">   20   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">   21   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   22   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:31:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">   23   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">   24   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   25   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:43:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   26   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">   27   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   28   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'gradCalc':</span>
+<span class="td-line-number">   29   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:65:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   30   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">   31   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   32   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:70:13: error: redefinition of 'i'</span>
+<span class="td-line-number">   33   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">   34   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   35   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:65:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">   36   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">   37   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   38   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:70:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   39   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">   40   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   41   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:73:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   42   </span><span class="td-line-normal">         for(int j = (riskSetInd[i]-1); j < (riskSetInd[i+1]-1); j++)</span>
+<span class="td-line-number">   43   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">   44   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:82:13: error: redefinition of 'i'</span>
+<span class="td-line-number">   45   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">   46   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   47   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:70:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">   48   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">   49   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   50   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:82:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   51   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">   52   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   53   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:87:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   54   </span><span class="td-line-normal">     for(int k = 0; k < n; k++)</span>
+<span class="td-line-number">   55   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   56   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:90:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   57   </span><span class="td-line-normal">         for(int i = 0; i < riskSet[k]; i++)</span>
+<span class="td-line-number">   58   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">   59   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'negLogLikelihoodCalc':</span>
+<span class="td-line-number">   60   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:107:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   61   </span><span class="td-line-normal">     for(int i = 0; i < totDeath[0]; i++)</span>
+<span class="td-line-number">   62   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   63   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:113:13: error: redefinition of 'i'</span>
+<span class="td-line-number">   64   </span><span class="td-line-normal">     for(int i = 0; i < nDeath[0]; i++)</span>
+<span class="td-line-number">   65   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   66   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:107:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">   67   </span><span class="td-line-normal">     for(int i = 0; i < totDeath[0]; i++)</span>
+<span class="td-line-number">   68   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   69   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:113:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   70   </span><span class="td-line-normal">     for(int i = 0; i < nDeath[0]; i++)</span>
+<span class="td-line-number">   71   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   72   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'Solver':</span>
+<span class="td-line-number">   73   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:144:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   74   </span><span class="td-line-normal">     for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">   75   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">   76   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:151:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   77   </span><span class="td-line-normal">             for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">   78   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   79   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:154:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   80   </span><span class="td-line-normal">                 for(int j = startInd; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">   81   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">   82   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:166:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   83   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">   84   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   85   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:169:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   86   </span><span class="td-line-normal">                 for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">   87   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">   88   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:193:21: error: redefinition of 'j'</span>
+<span class="td-line-number">   89   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">   90   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">   91   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:166:21: note: previous definition of 'j' was here</span>
+<span class="td-line-number">   92   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">   93   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">   94   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:193:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   95   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">   96   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">   97   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:202:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">   98   </span><span class="td-line-normal">                     for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">   99   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  100   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:204:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  101   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  102   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  103   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:211:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  104   </span><span class="td-line-normal">                 for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  105   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  106   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:224:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  107   </span><span class="td-line-normal">                 for(int k = 0; k < ncol[0]; k++)</span>
+<span class="td-line-number">  108   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  109   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:249:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  110   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  111   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  112   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:252:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  113   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  114   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  115   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:268:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  116   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  117   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  118   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:286:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  119   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  120   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  121   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:268:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  122   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  123   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  124   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:286:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  125   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  126   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  127   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:301:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  128   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  129   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  130   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:286:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  131   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  132   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  133   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:301:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  134   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  135   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  136   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:310:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  137   </span><span class="td-line-normal">                         for(int j = 0; j < rangeGroupInd[i]; j++)</span>
+<span class="td-line-number">  138   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  139   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:301:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  140   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  141   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  142   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:310:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  143   </span><span class="td-line-normal">                         for(int j = 0; j < rangeGroupInd[i]; j++)</span>
+<span class="td-line-number">  144   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  145   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:314:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  146   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  147   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  148   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:310:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  149   </span><span class="td-line-normal">                         for(int j = 0; j < rangeGroupInd[i]; j++)</span>
+<span class="td-line-number">  150   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  151   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:314:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  152   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  153   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  154   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:319:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  155   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i] + groupLen[i]; j < ncol[0]; j++)</span>
+<span class="td-line-number">  156   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  157   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:314:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  158   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  159   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  160   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:319:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  161   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i] + groupLen[i]; j < ncol[0]; j++)</span>
+<span class="td-line-number">  162   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  163   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:323:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  164   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  165   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  166   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:326:29: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  167   </span><span class="td-line-normal">                             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  168   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  169   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:339:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  170   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  171   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  172   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:319:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  173   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i] + groupLen[i]; j < ncol[0]; j++)</span>
+<span class="td-line-number">  174   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  175   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:339:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  176   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  177   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  178   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:353:29: error: redefinition of 'j'</span>
+<span class="td-line-number">  179   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  180   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  181   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:249:29: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  182   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  183   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  184   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:353:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  185   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  186   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  187   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:356:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  188   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  189   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  190   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:363:33: error: redefinition of 'k'</span>
+<span class="td-line-number">  191   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  192   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  193   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:356:33: note: previous definition of 'k' was here</span>
+<span class="td-line-number">  194   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  195   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  196   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:363:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  197   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  198   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  199   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'coxSolver':</span>
+<span class="td-line-number">  200   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:403:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  201   </span><span class="td-line-normal">     for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  202   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  203   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:424:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  204   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  205   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  206   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:429:21: error: redefinition of 'i'</span>
+<span class="td-line-number">  207   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  208   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  209   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:424:21: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  210   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  211   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  212   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:429:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  213   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  214   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  215   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:437:21: error: redefinition of 'i'</span>
+<span class="td-line-number">  216   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  217   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  218   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:429:21: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  219   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  220   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  221   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:437:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  222   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  223   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  224   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'Cox':</span>
+<span class="td-line-number">  225   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:471:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  226   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">  227   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  228   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:476:13: error: redefinition of 'i'</span>
+<span class="td-line-number">  229   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">  230   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  231   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:471:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  232   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">  233   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  234   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:476:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  235   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">  236   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  237   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:479:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  238   </span><span class="td-line-normal">         for(int j = (riskSetInd[i]-1); j < (riskSetInd[i+1]-1); j++)</span>
+<span class="td-line-number">  239   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">  240   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:489:13: error: redefinition of 'i'</span>
+<span class="td-line-number">  241   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">  242   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  243   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:476:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  244   </span><span class="td-line-normal">     for(int i = 0; i < ndeath; i++)</span>
+<span class="td-line-number">  245   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  246   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:489:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  247   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">  248   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  249   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:494:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  250   </span><span class="td-line-normal">     for(int k = 0; k < n; k++)</span>
+<span class="td-line-number">  251   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  252   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:498:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  253   </span><span class="td-line-normal">         for(int i = 0; i < riskSet[k]; i++)</span>
+<span class="td-line-number">  254   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">  255   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:507:13: error: redefinition of 'i'</span>
+<span class="td-line-number">  256   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">  257   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  258   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:489:13: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  259   </span><span class="td-line-normal">     for(int i = 2; i <= ndeath; i++)</span>
+<span class="td-line-number">  260   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  261   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:507:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  262   </span><span class="td-line-normal">     for(int i = 0; i < n; i++)</span>
+<span class="td-line-number">  263   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  264   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'linGradCalc':</span>
+<span class="td-line-number">  265   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:525:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  266   </span><span class="td-line-normal">     for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  267   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  268   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'linNegLogLikelihoodCalc':</span>
+<span class="td-line-number">  269   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:536:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  270   </span><span class="td-line-normal">     for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  271   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  272   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'linSolver':</span>
+<span class="td-line-number">  273   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:565:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  274   </span><span class="td-line-normal">     for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  275   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  276   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:572:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  277   </span><span class="td-line-normal">             for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  278   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  279   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:575:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  280   </span><span class="td-line-normal">                 for(int j = startInd; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  281   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  282   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:587:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  283   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  284   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  285   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:590:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  286   </span><span class="td-line-normal">                 for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  287   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  288   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:614:21: error: redefinition of 'j'</span>
+<span class="td-line-number">  289   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  290   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  291   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:587:21: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  292   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  293   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  294   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:614:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  295   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  296   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  297   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:623:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  298   </span><span class="td-line-normal">                     for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  299   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  300   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:625:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  301   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  302   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  303   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:632:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  304   </span><span class="td-line-normal">                 for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  305   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  306   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:645:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  307   </span><span class="td-line-normal">                 for(int k = 0; k < ncol[0]; k++)</span>
+<span class="td-line-number">  308   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  309   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:672:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  310   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  311   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  312   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:675:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  313   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  314   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  315   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:690:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  316   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  317   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  318   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:708:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  319   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  320   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  321   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:690:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  322   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  323   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  324   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:708:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  325   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  326   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  327   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:737:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  328   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  329   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  330   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:708:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  331   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  332   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  333   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:737:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  334   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  335   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  336   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:746:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  337   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  338   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  339   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:749:29: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  340   </span><span class="td-line-normal">                             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  341   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  342   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:760:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  343   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  344   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  345   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:737:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  346   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  347   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  348   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:760:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  349   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  350   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  351   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:780:29: error: redefinition of 'j'</span>
+<span class="td-line-number">  352   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  353   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  354   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:672:29: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  355   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  356   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  357   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:780:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  358   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  359   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  360   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:783:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  361   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  362   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  363   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:794:33: error: redefinition of 'k'</span>
+<span class="td-line-number">  364   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  365   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  366   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:783:33: note: previous definition of 'k' was here</span>
+<span class="td-line-number">  367   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  368   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  369   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:794:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  370   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  371   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  372   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'linNest':</span>
+<span class="td-line-number">  373   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:841:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  374   </span><span class="td-line-normal">     for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  375   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  376   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:862:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  377   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  378   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  379   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:867:21: error: redefinition of 'i'</span>
+<span class="td-line-number">  380   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  381   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  382   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:862:21: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  383   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  384   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  385   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:867:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  386   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  387   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  388   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:875:21: error: redefinition of 'i'</span>
+<span class="td-line-number">  389   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  390   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  391   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:867:21: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  392   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  393   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  394   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:875:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  395   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  396   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  397   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'logitGradCalc':</span>
+<span class="td-line-number">  398   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:926:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  399   </span><span class="td-line-normal">     for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  400   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  401   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'pCalc':</span>
+<span class="td-line-number">  402   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:934:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  403   </span><span class="td-line-normal">     for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  404   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  405   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'logitNegLogLikelihoodCalc':</span>
+<span class="td-line-number">  406   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:945:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  407   </span><span class="td-line-normal">     for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  408   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  409   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'betaZeroSolve':</span>
+<span class="td-line-number">  410   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:965:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  411   </span><span class="td-line-normal">         for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  412   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">  413   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:973:17: error: redefinition of 'i'</span>
+<span class="td-line-number">  414   </span><span class="td-line-normal">         for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  415   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  416   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:965:17: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  417   </span><span class="td-line-normal">         for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  418   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  419   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:973:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  420   </span><span class="td-line-normal">         for(int i = 0; i < nrow[0]; i++)</span>
+<span class="td-line-number">  421   </span><span class="td-line-normal">         ^</span>
+<span class="td-line-number">  422   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'logitSolver':</span>
+<span class="td-line-number">  423   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1002:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  424   </span><span class="td-line-normal">     for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  425   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  426   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1009:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  427   </span><span class="td-line-normal">             for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  428   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  429   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1012:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  430   </span><span class="td-line-normal">                 for(int j = startInd; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  431   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  432   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1025:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  433   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  434   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  435   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1028:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  436   </span><span class="td-line-normal">                 for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  437   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  438   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1052:21: error: redefinition of 'j'</span>
+<span class="td-line-number">  439   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  440   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  441   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1025:21: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  442   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  443   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  444   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1052:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  445   </span><span class="td-line-normal">             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  446   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  447   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1061:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  448   </span><span class="td-line-normal">                     for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  449   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  450   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1063:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  451   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  452   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  453   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1070:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  454   </span><span class="td-line-normal">                 for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  455   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  456   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1083:17: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  457   </span><span class="td-line-normal">                 for(int k = 0; k < ncol[0]; k++)</span>
+<span class="td-line-number">  458   </span><span class="td-line-normal">                 ^</span>
+<span class="td-line-number">  459   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1111:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  460   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  461   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  462   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1114:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  463   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  464   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  465   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1130:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  466   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  467   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  468   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1148:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  469   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  470   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  471   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1130:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  472   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  473   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  474   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1148:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  475   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  476   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  477   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1164:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  478   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  479   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  480   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1148:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  481   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  482   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  483   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1164:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  484   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  485   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  486   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1173:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  487   </span><span class="td-line-normal">                         for(int j = 0; j < rangeGroupInd[i]; j++)</span>
+<span class="td-line-number">  488   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  489   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1164:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  490   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  491   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  492   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1173:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  493   </span><span class="td-line-normal">                         for(int j = 0; j < rangeGroupInd[i]; j++)</span>
+<span class="td-line-number">  494   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  495   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1177:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  496   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  497   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  498   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1173:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  499   </span><span class="td-line-normal">                         for(int j = 0; j < rangeGroupInd[i]; j++)</span>
+<span class="td-line-number">  500   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  501   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1177:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  502   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  503   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  504   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1182:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  505   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i] + groupLen[i]; j < ncol[0]; j++)</span>
+<span class="td-line-number">  506   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  507   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1177:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  508   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i]; j < rangeGroupInd[i] + groupLen[i]; j++)</span>
+<span class="td-line-number">  509   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  510   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1182:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  511   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i] + groupLen[i]; j < ncol[0]; j++)</span>
+<span class="td-line-number">  512   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  513   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1186:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  514   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  515   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  516   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1189:29: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  517   </span><span class="td-line-normal">                             for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  518   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  519   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1201:33: error: redefinition of 'j'</span>
+<span class="td-line-number">  520   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  521   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  522   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1182:33: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  523   </span><span class="td-line-normal">                         for(int j = rangeGroupInd[i] + groupLen[i]; j < ncol[0]; j++)</span>
+<span class="td-line-number">  524   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  525   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1201:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  526   </span><span class="td-line-normal">                         for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  527   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  528   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1215:29: error: redefinition of 'j'</span>
+<span class="td-line-number">  529   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  530   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  531   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1111:29: note: previous definition of 'j' was here</span>
+<span class="td-line-number">  532   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  533   </span><span class="td-line-normal">                             ^</span>
+<span class="td-line-number">  534   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1215:21: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  535   </span><span class="td-line-normal">                     for(int j = 0; j < groupLen[i]; j++)</span>
+<span class="td-line-number">  536   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  537   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1218:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  538   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  539   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  540   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1225:33: error: redefinition of 'k'</span>
+<span class="td-line-number">  541   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  542   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  543   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1218:33: note: previous definition of 'k' was here</span>
+<span class="td-line-number">  544   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  545   </span><span class="td-line-normal">                                 ^</span>
+<span class="td-line-number">  546   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1225:25: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  547   </span><span class="td-line-normal">                         for(int k = 0; k < nrow[0]; k++)</span>
+<span class="td-line-number">  548   </span><span class="td-line-normal">                         ^</span>
+<span class="td-line-number">  549   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c: In function 'logitNest':</span>
+<span class="td-line-number">  550   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1268:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  551   </span><span class="td-line-normal">     for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  552   </span><span class="td-line-normal">     ^</span>
+<span class="td-line-number">  553   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1289:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  554   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  555   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  556   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1295:21: error: redefinition of 'i'</span>
+<span class="td-line-number">  557   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  558   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  559   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1289:21: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  560   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  561   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  562   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1295:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  563   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  564   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  565   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1304:21: error: redefinition of 'i'</span>
+<span class="td-line-number">  566   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  567   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  568   </span><span class="td-line-normal">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1295:21: note: previous definition of 'i' was here</span>
+<span class="td-line-number">  569   </span><span class="td-line-normal">             for(int i = 0; i < numGroup[0]; i++)</span>
+<span class="td-line-number">  570   </span><span class="td-line-normal">                     ^</span>
+<span class="td-line-number">  571   </span><span class="td-line-error">C:\Users\Z440\DOCUME~1\GitHub\MIDAS_~1\nlapprox/code.c:1304:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode</span>
+<span class="td-line-number">  572   </span><span class="td-line-normal">             for(int i = 0; i < p; i++)</span>
+<span class="td-line-number">  573   </span><span class="td-line-normal">             ^</span>
+<span class="td-line-number">  574   </span><span class="td-line-normal">gmake: *** [code.o] Error 1</span>
+</pre>
+</td></tr></table>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+MEX {
+	global:
+		mexFunction;
+		mexfilerequiredapiversion;
+		emlrtMexFcnProperties;
+		c_linNest;
+		b_emlrt_marshallIn;
+		emlrt_marshallIn;
+		o_emlrt_marshallIn;
+		emxEnsureCapacity;
+		emxFree_real_T;
+		emxInit_real_T;
+		c_linNest_initialize;
+		c_linNest_terminate;
+		c_linNest_atexit;
+	local:
+		*;
+};

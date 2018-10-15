@@ -3,9 +3,8 @@ rm(list = ls())
 #install.packages("R.matlab")
 require("SGL")
 require("R.matlab")
-#setwd("/Users/striaukas/Documents/GitHub/midas_lasso_shapre_rest/nlapprox")
-setwd("C:/Users/Z440/Documents/GitHub/midas_lasso_shapre_rest/nlapprox")
-
+setwd("C:/Users/Z440/Documents/GitHub/midas_lasso_shapre_rest/code_check")
+set.seed(123)
 n = 50; p = 10; size.groups = 3
 index <- ceiling(1:p / size.groups)
 X = matrix(rnorm(n * p), ncol = p, nrow = n)
@@ -16,9 +15,9 @@ y = X[,1:5] %*% beta + 0.1*rnorm(n)
 y.filename <- paste("y", ".mat", sep = "")
 X.filename <- paste("X", ".mat", sep = "")
 idx.filename <- paste("index", ".mat", sep = "")
-writeMat(y.filename, y = y)
-writeMat(X.filename, X = X)
-writeMat(idx.filename, index = index)
+#writeMat(y.filename, y = y)
+#writeMat(X.filename, X = X)
+#writeMat(idx.filename, index = index)
 #____________________________________________________#
 
 #_________ DATA AND PARAMETERS _____________#
@@ -37,5 +36,4 @@ lambdas = c(0, 1, 2, 3)
 type = "linear"
 
 Fit = SGL(data, index, type = "linear", lambdas = lambdas, standardize = FALSE)
-Rbeta <- paste("Rbeta", ".mat", sep = "")
-writeMat(Rbeta, rbeta = Fit$beta)
+Fit$beta

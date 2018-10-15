@@ -7,11 +7,7 @@ if(isempty(lambdas))
     % not yet implemented:
     %lambdas = betterPathCalc(data = data, index = index, alpha=alpha, min.frac = min.frac, nlam = nlam, type = "linear")
 end
-nlam1 = length(lambdas);
-if nlam1~=nlam
-    %warning('number of lambdas specified and the length of lambda vector is not the same. nlam set to the length of lambda vetor');
-    nlam = nlam1;
-end
+
 X = x;
 y = y;
 [n,p] = size(X);
@@ -27,7 +23,6 @@ X = X(:,ord);
 %_ preparing for C++ _%
 groups = unique(index);
 numGroup = length(groups);
-
 rangeGroupInd = zeros((numGroup+1),1);
 for i = 1:numGroup
     rangeGroupInd(i,:) = find(index == groups(i), 1 ) - 1;
@@ -35,17 +30,21 @@ end
 rangeGroupInd(numGroup+1) = p;
 groupLen = diff(rangeGroupInd);
 
+
+
+beta = zeros(nrow,1);
+
 %_Loop through Lambdas_%
 for k = 1:nlam
     eta = zeros(n,1);
     lambda1 = lambdas(k)*alpha;
     lambda2 = lambdas(k)*(1-alpha);
     
-    [beta, betaIsZero] = c_linNest_mex(X, y, int32(index), int32(nrow), int32(ncol), ...
-        int32(numGroup), int32(rangeGroupInd), int32(groupLen), lambda1, ...
-        lambda2, int32(innerIter), int32(outerIter), thresh, ...
-        outerThresh, eta, gamma, step, int32(reset));
-    beta_new(:,k)  = beta';
+    
+    beta = c_linNest_mex(X, y, int32(index), nrow, ncol, numGroup, rangeGroupInd, ...
+    groupLen, lambda1, lambda2, beta, innerIter, outerIter, thresh, ...
+    outerThresh, eta, gamma, step, reset);
+    beta_new  = beta';
     if(verbose)
         disp(['*** Lambda - ', num2str(k), ' ***']);
     end

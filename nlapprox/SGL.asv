@@ -6,20 +6,8 @@ function out = SGL(y, x, index,varargin)
 %   inputs: y - n x 1 - vector of response
 %           x - n x (Kxm) - matrix of covariates
 %           index - A Kxm - vector indicating group membership of each covariate
-%           varargin - additional input variables, see process_options
-%           below for default values
-%
-%   output: out (if standardize):
-%           beta - Kxm x nlam matrix of slope coefficients for nlam
-%           different models
-%           lambdas - actual lambda sequence used to fit models
-%           type - (not implemented,linear only) response type: linear/logic/cox 
-%           intercept - interecept (not penalized!)
-%           X_transform - empirical mean and variance for prediction (in
-%           case the data is standardized)
+%           varargin - various 
 %   
-%    Copyleft: J. Striaukas, 2018 October
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [type,maxit,thresh,minFrac,nlam,gamma,standardize,verbose,step,reset,alpha,lambdas] = ...
     process_options(varargin,'type','linear','maxit',1000,'thresh',1e-3,...
@@ -53,7 +41,7 @@ if (strcmp('linear',type))
         step,reset,alpha);
     
     if (standardize == true)
-      Sol.beta = beta; 
+      Sol.beta = beta;
       Sol.lambdas = lambdas; 
       Sol.type = type;
       Sol.intercept = intercept;
