@@ -1,8 +1,0 @@
-LIBRARY c_linNest_mex.mexw64
-EXPORTS
-mexFunction
-emlrtMexFcnProperties
-c_linNest
-c_linNest_initialize
-c_linNest_terminate
-c_linNest_atexit
