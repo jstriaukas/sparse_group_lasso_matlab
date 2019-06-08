@@ -1,0 +1,63 @@
+---
+title: "sgl_lasso_check"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# load packages
+
+```{r load_package,echo=FALSE}
+require("SGL")
+require("glmnet")
+require("gglasso")
+```
+
+
+# Compare LASSO and sparse-group LASSO:
+```{r compare,echo=FALSE}
+set.seed(10)
+lambda <- 0.1
+n <- 50
+p <- 100
+size.groups <- 1
+index <- ceiling(1:p / size.groups)
+X <- matrix(rnorm(n*p), ncol = p, nrow = n)
+beta <- (-2:2)
+y <- X[,1:5] %*% beta + 0.1*rnorm(n)
+data <- list(x = X, y = y)
+fit <- SGL(data,index,type="linear",lambdas=lambda,alpha=1,standardize=FALSE,thresh=1e-07,maxit =1e+05)
+sglasso.b <- fit$beta
+fit <- glmnet(X,y,lambda=lambda,standardize=FALSE)
+lasso.b <- as.numeric(coefficients(fit))
+cat("sparse-group LASSO beta")
+sglasso.b
+cat("LASSO beta")
+lasso.b[-1]
+```
+
+
+
+
+# Compare group LASSO and sparse-group LASSO:
+
+```{r compare_groups, echo=FALSE}
+lambda <- 0.02
+# load gglasso data:
+data(colon)
+# define group index
+group1 <- rep(1:20,each=5)
+
+# fit group lasso penalized least squares
+g.fit <- gglasso(x = colon$x, y = colon$y, group = group1, loss = "ls",lambda = lambda,intercept=FALSE)
+g.b <- as.numeric(g.fit$beta)
+fit <- SGL(colon,index=group1,type="linear",lambdas=lambda,alpha=0,standardize=FALSE)
+sglasso.b <- fit$beta
+
+cat("sparse-group LASSO beta")
+sglasso.b
+cat("group LASSO beta")
+g.b
+```
