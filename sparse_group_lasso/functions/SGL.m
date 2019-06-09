@@ -3,7 +3,9 @@ function out = SGL(y, x, index,varargin)
     process_options(varargin,'type','linear','maxit',1000,'thresh',1e-3,...
     'minFrac',1e-1,'nlam',1,'gamma',0.8,'standardize',true, ...
     'verbose',false,'step',1,'reset',20,'alpha',0.95,'lambdas',[0,1,2,3]);
-
+if isempty(lambdas)
+    lambdas = betterPathCalc(y,x,index,alpha,minFrac,nlam,'standardize',standardize);
+end
 X_transform = [];
 if (standardize == true)
     X = x;
