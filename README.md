@@ -1,6 +1,6 @@
 # sparse-group LASSO
 
-This repository containts functions that are translated from R package "SGL" (see [2]) to matlab to estimate sparse-group LASSO penalized regression model. Main subroutines, which are written in C++, are taken from the R package. 
+This repository containts functions that are translated from R package "SGL" (see [2]) to Matlab to estimate sparse-group LASSO penalized regression model. Main subroutines, which are written in C++, are taken from the R package. 
 See [1] for more details about sparse-group LASSO and the optimization algorithm.
 
 # References
